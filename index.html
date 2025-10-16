@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investigation Underway...</title>
+    <title>Crimson Eye 2025 - Phasmophobia Halloween Event | events.phasmo.info</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Butcherman&family=Chiller&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
@@ -14,299 +12,485 @@
         }
 
         body {
-            background: linear-gradient(45deg, #000000, #0a0a0a, #050505);
-            background-size: 400% 400%;
-            animation: backgroundShift 20s ease infinite;
-            font-family: 'Courier New', cursive;
-            color: #ffffff;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d1414 50%, #1a0a0a 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            min-height: 100vh;
         }
 
-        @keyframes backgroundShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .noise {
+        .blood-moon {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.08;
-            z-index: 1;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><defs><filter id="noise"><feTurbulence baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter></defs><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.4"/></svg>');
-            animation: noiseMove 0.2s infinite linear;
+            top: 50px;
+            right: 50px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #8b0000 0%, #4a0000 70%, transparent 100%);
+            border-radius: 50%;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+            box-shadow: 0 0 100px #8b0000;
         }
 
-        @keyframes noiseMove {
-            0% { transform: translate(0, 0); }
-            10% { transform: translate(-5%, -5%); }
-            20% { transform: translate(-10%, 5%); }
-            30% { transform: translate(5%, -10%); }
-            40% { transform: translate(-5%, 15%); }
-            50% { transform: translate(-10%, 5%); }
-            60% { transform: translate(15%, 0); }
-            70% { transform: translate(0, 10%); }
-            80% { transform: translate(-15%, 0); }
-            90% { transform: translate(10%, 5%); }
-            100% { transform: translate(5%, 0); }
-        }
-
-        .container {
-            position: relative;
-            z-index: 10;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        header {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+            padding: 2rem 0;
             text-align: center;
-            padding: 20px;
-        }
-
-        .glitch {
-            font-size: 3.5rem;
-            font-weight: 900;
-            font-family: 'Courier New', cursive;
-            text-transform: uppercase;
+            border-bottom: 3px solid #8b0000;
             position: relative;
-            color: #ffffff;
-            margin-bottom: 20px;
-            animation: flicker 2s infinite alternate;
-            text-shadow: 2px 2px 4px #000000;
+            z-index: 1;
         }
 
-        @keyframes flicker {
-            0%, 18%, 22%, 25%, 53%, 57%, 100% {
-                text-shadow: 
-                    0 0 5px #ffffff,
-                    0 0 10px #ffffff,
-                    0 0 15px #ffffff,
-                    0 0 20px #ffffff,
-                    2px 2px 4px #000000;
-                opacity: 1;
-            }
-            20%, 24%, 55% {
-                text-shadow: 2px 2px 4px #000000;
-                opacity: 0.3;
-            }
-        }
-
-        .glitch::before {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
             color: #ff4444;
-            z-index: -1;
-            animation: glitchSkew 1s infinite linear alternate-reverse;
-        }
-
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            color: #4444ff;
-            z-index: -2;
-            animation: glitchSkew 1s infinite linear alternate-reverse;
-            animation-delay: 0.2s;
-        }
-
-        @keyframes glitchSkew {
-            0% {
-                transform: translate(0);
-            }
-            10% {
-                transform: translate(-2px, -2px);
-            }
-            20% {
-                transform: translate(-4px, 0px);
-            }
-            30% {
-                transform: translate(2px, -2px);
-            }
-            40% {
-                transform: translate(-1px, 1px);
-            }
-            50% {
-                transform: translate(3px, 0px);
-            }
-            60% {
-                transform: translate(-2px, 1px);
-            }
-            70% {
-                transform: translate(0px, -2px);
-            }
-            80% {
-                transform: translate(1px, 0px);
-            }
-            90% {
-                transform: translate(2px, 1px);
-            }
-            100% {
-                transform: translate(0);
-            }
+            text-shadow: 0 0 20px #8b0000, 0 0 40px #8b0000;
+            margin-bottom: 0.5rem;
         }
 
         .subtitle {
+            color: #b0b0b0;
             font-size: 1.2rem;
-            font-family: 'Courier New', cursive;
-            color: #cccccc;
-            margin-bottom: 30px;
-            animation: pulse 3s infinite;
-            text-shadow: 1px 1px 2px #000000;
+            margin-bottom: 1rem;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
+        .event-dates {
+            display: inline-block;
+            background: rgba(139, 0, 0, 0.3);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            border: 2px solid #8b0000;
+            font-weight: bold;
+            color: #ff6666;
         }
 
-        .status-box {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid #ffffff;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 
-                0 0 20px rgba(255, 255, 255, 0.1),
-                inset 0 0 20px rgba(255, 255, 255, 0.03);
-            animation: borderGlow 2s ease-in-out infinite alternate;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .alert-box {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(75, 0, 0, 0.3));
+            border-left: 4px solid #ff4444;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
             backdrop-filter: blur(10px);
         }
 
-        @keyframes borderGlow {
-            from {
-                box-shadow: 
-                    0 0 20px rgba(255, 255, 255, 0.1),
-                    inset 0 0 20px rgba(255, 255, 255, 0.03);
-            }
-            to {
-                box-shadow: 
-                    0 0 30px rgba(255, 255, 255, 0.2),
-                    inset 0 0 25px rgba(255, 255, 255, 0.06);
-            }
+        .alert-box h2 {
+            color: #ff4444;
+            margin-bottom: 0.5rem;
         }
 
-        .message {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 1px 1px 2px #000000;
+        .section {
+            background: rgba(20, 10, 10, 0.8);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
         }
 
-        .warning {
+        h1, h2 {
+            color: #ff6666;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            color: #ff8888;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .maps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .map-card {
+            background: rgba(30, 15, 15, 0.8);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 2px solid rgba(139, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .map-card:hover {
+            border-color: #ff4444;
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .map-name {
+            font-weight: bold;
+            color: #ff6666;
+            margin-bottom: 0.5rem;
+        }
+
+        .rewards-list {
+            background: rgba(30, 15, 15, 0.6);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .reward-item {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: rgba(139, 0, 0, 0.2);
+            border-left: 3px solid #ff4444;
+            border-radius: 4px;
+        }
+
+        .reward-type {
+            font-weight: bold;
+            color: #ff6666;
+            text-transform: uppercase;
             font-size: 0.9rem;
-            color: #ffaa00;
-            margin-top: 15px;
-            animation: warningBlink 1.5s infinite;
         }
 
-        @keyframes warningBlink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0.3; }
+        .blood-moon-effects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
         }
 
-        .dots {
-            display: inline-block;
-            animation: dotPulse 2s infinite;
+        .effect-card {
+            padding: 1rem;
+            background: rgba(139, 0, 0, 0.2);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 68, 68, 0.3);
         }
 
-        @keyframes dotPulse {
-            0%, 20% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
+        .effect-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
         }
 
-        .dots:nth-child(2) { animation-delay: 0.2s; }
-        .dots:nth-child(3) { animation-delay: 0.4s; }
+        .effect-title {
+            font-weight: bold;
+            color: #ff6666;
+            margin-bottom: 0.5rem;
+        }
 
-        .scanner {
-            position: absolute;
-            top: 0;
-            left: -100%;
+        .tips-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips-list li {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: rgba(30, 15, 15, 0.6);
+            border-left: 3px solid #ff8888;
+            border-radius: 4px;
+        }
+
+        .tips-list li:before {
+            content: "🔮 ";
+            margin-right: 0.5rem;
+        }
+
+        .points-table {
             width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #ffffff, transparent);
-            animation: scan 3s ease-in-out infinite;
+            border-collapse: collapse;
+            margin: 1rem 0;
         }
 
-        @keyframes scan {
-            0% { left: -100%; }
-            100% { left: 100%; }
+        .points-table th,
+        .points-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+        }
+
+        .points-table th {
+            background: rgba(139, 0, 0, 0.3);
+            color: #ff6666;
+            font-weight: bold;
+        }
+
+        .points-table tr:hover {
+            background: rgba(139, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            color: #808080;
+            border-top: 1px solid rgba(139, 0, 0, 0.3);
+        }
+
+        footer a {
+            color: #ff6666;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ff8888;
+        }
+
+        .highlight {
+            color: #ff6666;
+            font-weight: bold;
+        }
+
+        .note {
+            background: rgba(255, 255, 100, 0.1);
+            border-left: 3px solid #ffaa00;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            color: #ffcc88;
         }
 
         @media (max-width: 768px) {
-            .glitch {
-                font-size: 2.5rem;
+            .logo {
+                font-size: 2rem;
             }
-            .message {
-                font-size: 1.1rem;
+
+            .container {
+                padding: 1rem;
             }
-            .status-box {
-                padding: 20px;
+
+            .blood-moon {
+                width: 100px;
+                height: 100px;
+                top: 30px;
+                right: 30px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="noise"></div>
-    <div class="scanner"></div>
+    <div class="blood-moon"></div>
     
+    <header>
+        <div class="logo">CRIMSON EYE 2025</div>
+        <div class="subtitle">Phasmophobia Halloween Event</div>
+        <div class="event-dates">📅 October 9 - October 31, 2025</div>
+    </header>
+
     <div class="container">
-        <h1 class="glitch" data-text="WEBSITE UPDATE IN PROGRESS">WEBSITE UPDATE IN PROGRESS</h1>
-        
-        <p class="subtitle">New Phasmophobia Content Detected</p>
-        
-        <div class="status-box">
-            <div class="message">
-                Site reconstruction underway<span class="dots">.</span><span class="dots">.</span><span class="dots">.</span>
+        <div class="alert-box">
+            <h2>⚠️ Blood Moon Rising</h2>
+            <p>The Crimson Eye returns. Ghosts are more aggressive, your sanity drains faster, but greater rewards await those brave enough to face the Blood Moon. Work together with the community to unlock exclusive rewards and upgrades!</p>
+        </div>
+
+        <div class="section">
+            <h2>🎃 What is Crimson Eye?</h2>
+            <p>Crimson Eye is Phasmophobia's annual Halloween event, featuring the ominous <span class="highlight">Blood Moon weather</span> across select maps. This year's event runs for three weeks and includes both individual and community goals with automatic reward claiming.</p>
+            
+            <h3>Key Improvements for 2025:</h3>
+            <ul class="tips-list">
+                <li><strong>More Maps:</strong> Event expanded from 4 to 7 maps with daily rotation</li>
+                <li><strong>Auto-Claim Rewards:</strong> No need to interact with totems - rewards are automatically claimed upon login</li>
+                <li><strong>Trophy Upgrades:</strong> Complete Personal Goals to upgrade your Crimson Eye Trophy</li>
+                <li><strong>Better Balance:</strong> Improved progression system based on feedback from 2024</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🌙 Blood Moon Effects</h2>
+            <p>When the Blood Moon rises, investigations become more dangerous - but more rewarding:</p>
+            
+            <div class="blood-moon-effects">
+                <div class="effect-card">
+                    <div class="effect-icon">👻</div>
+                    <div class="effect-title">Faster Hunts</div>
+                    <p>Ghosts move at increased speed during hunts</p>
+                </div>
+                <div class="effect-card">
+                    <div class="effect-icon">🧠</div>
+                    <div class="effect-title">Sanity Drain</div>
+                    <p>Your sanity drains at a faster rate</p>
+                </div>
+                <div class="effect-card">
+                    <div class="effect-icon">💰</div>
+                    <div class="effect-title">10% Bonus</div>
+                    <p>All investigation rewards boosted by 10%</p>
+                </div>
+                <div class="effect-card">
+                    <div class="effect-icon">🎯</div>
+                    <div class="effect-title">Event Points</div>
+                    <p>Earn points toward community and personal goals</p>
+                </div>
             </div>
-            <div class="message">
-                Updating to reflect the latest Phasmophobia changes
+        </div>
+
+        <div class="section">
+            <h2>🗺️ Event Maps</h2>
+            <p>Seven maps will feature guaranteed Blood Moon weather, rotating in groups of 4 each day. Look for the <span class="highlight">red circle indicator</span> next to a map to see if it's active today!</p>
+            
+            <div class="maps-grid">
+                <div class="map-card">
+                    <div class="map-name">🏠 6 Tanglewood Drive</div>
+                    <p>Small map</p>
+                </div>
+                <div class="map-card">
+                    <div class="map-name">⛺ Camp Woodwind</div>
+                    <p>Medium map</p>
+                </div>
+                <div class="map-card">
+                    <div class="map-name">🌾 Grafton Farmhouse</div>
+                    <p>Medium map</p>
+                </div>
+                <div class="map-card">
+                    <div class="map-name">⛪ Bleasdale Farmhouse</div>
+                    <p>Medium map</p>
+                </div>
+                <div class="map-card">
+                    <div class="map-name">🏚️ Point Hope</div>
+                    <p>Large map</p>
+                </div>
+                <div class="map-card">
+                    <div class="map-name">🏘️ 42 Edgefield Road</div>
+                    <p>Medium map</p>
+                </div>
+                <div class="map-card">
+                    <div class="map-name">🏚️ 13 Willow Street</div>
+                    <p>Medium map</p>
+                </div>
             </div>
-            <div class="message">
-                Please check back soon for fresh paranormal content
+
+            <div class="note">
+                <strong>Note:</strong> Non-event maps still have a small random chance of Blood Moon weather appearing!
             </div>
-            <div class="warning">
-                ⚠️ Equipment calibration in progress - temporary downtime expected ⚠️
+        </div>
+
+        <div class="section">
+            <h2>🎁 Rewards & Goals</h2>
+            
+            <h3>Community Goals</h3>
+            <div class="rewards-list">
+                <div class="reward-item">
+                    <div class="reward-type">Community Reward</div>
+                    <strong>Child of the Cult ID Card & Badge Set</strong>
+                    <p>Unlock this exclusive cosmetic by contributing to the community goal. Points are earned through successful investigations on Blood Moon maps.</p>
+                </div>
             </div>
+
+            <h3>Personal Goals</h3>
+            <div class="rewards-list">
+                <div class="reward-item">
+                    <div class="reward-type">Personal Reward</div>
+                    <strong>Crimson Eye Trophy Upgrades</strong>
+                    <p>Complete your Personal Goals to upgrade your Crimson Eye Trophy. Each tier unlocked adds more detail and prestige to your lobby display.</p>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>Already have the Blood Moon Trophy from 2024?</strong> You won't receive a duplicate, but you can still earn the new rewards!
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📊 How to Earn Points</h2>
+            <p>Contribute to both Community and Personal Goals by completing investigations on Blood Moon maps:</p>
+
+            <table class="points-table">
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Points Earned</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Correctly identify the ghost</td>
+                        <td>10 points + 1 per difficulty multiplier</td>
+                    </tr>
+                    <tr>
+                        <td>Complete optional objectives</td>
+                        <td>3 points per objective</td>
+                    </tr>
+                    <tr>
+                        <td>Interact with Blood Moon totems</td>
+                        <td>2 points per totem</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="note">
+                <strong>Important:</strong> Contracts with a 0x difficulty multiplier reward no points. Play on higher difficulties for maximum contribution!
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💡 Tips for Surviving the Blood Moon</h2>
+            
+            <ul class="tips-list">
+                <li><strong>Bring Sanity Pills:</strong> Your sanity drains faster, so stock up on sanity restoration items</li>
+                <li><strong>Know Your Hiding Spots:</strong> With faster ghost speeds, you need to be ready to hide quickly</li>
+                <li><strong>Use Smudge Sticks Wisely:</strong> Save them for critical moments during hunts</li>
+                <li><strong>Communicate Clearly:</strong> Teamwork is essential when facing increased difficulty</li>
+                <li><strong>Take Photos:</strong> Don't forget to photograph totems for extra points</li>
+                <li><strong>Complete Objectives:</strong> Each optional objective adds 3 points - they're worth the effort!</li>
+                <li><strong>Check Daily Rotation:</strong> Plan your play sessions around which maps are active each day</li>
+                <li><strong>Play on Higher Difficulties:</strong> The difficulty multiplier increases your point rewards</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🎮 How to Participate</h2>
+            
+            <h3>Step 1: Launch Phasmophobia</h3>
+            <p>Make sure your game is updated to the latest version (the event launched October 9, 2025).</p>
+
+            <h3>Step 2: Select a Blood Moon Map</h3>
+            <p>Look for maps with a red circle indicator - these guarantee Blood Moon weather for the day.</p>
+
+            <h3>Step 3: Complete Your Investigation</h3>
+            <p>Identify the ghost correctly and complete as many objectives as possible to earn points.</p>
+
+            <h3>Step 4: Collect Your Rewards</h3>
+            <p>Rewards are automatically claimed! Just log in during the event window after a goal is completed.</p>
+        </div>
+
+        <div class="section">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <h3>When does the event end?</h3>
+            <p>The Crimson Eye event runs until <strong>October 31, 2025</strong> at approximately 11:59 PM local server time.</p>
+
+            <h3>Do I need to claim rewards manually?</h3>
+            <p>No! This year, all rewards are auto-claimed. Once a goal is completed, you'll receive the rewards automatically upon your next login during the event window.</p>
+
+            <h3>Can I play solo?</h3>
+            <p>Yes! You can contribute to community goals whether playing solo or with a team.</p>
+
+            <h3>What if I miss a day?</h3>
+            <p>No problem! The event runs for three weeks, and maps rotate daily, so you'll have multiple chances to play each map.</p>
+
+            <h3>Will Blood Moon weather be available after the event?</h3>
+            <p>Yes! Blood Moon was permanently added to the game as a random weather type after the 2024 event.</p>
+
+            <h3>I already have the 2024 trophy. What can I earn?</h3>
+            <p>You can still earn the new Child of the Cult ID Card & Badge set, plus trophy upgrades through Personal Goals.</p>
+        </div>
+
+        <div class="section">
+            <h2>🎉 TwitchCon San Diego</h2>
+            <p>During the event, Kinetic Games is attending <strong>TwitchCon San Diego</strong>! Visit their booth (#4818) in the Indie Zone to experience the Blood Moon IRL and watch live streams featuring exclusive Twitch Drop rewards.</p>
+            
+            <p>Early event previews were available starting October 8 on official Kinetic Games Partner streams.</p>
         </div>
     </div>
 
-    <script>
-        // Random screen flicker effect
-        function randomFlicker() {
-            const body = document.body;
-            if (Math.random() < 0.1) {
-                body.style.filter = 'brightness(0.3) contrast(1.5)';
-                setTimeout(() => {
-                    body.style.filter = 'brightness(1) contrast(1)';
-                }, 50 + Math.random() * 100);
-            }
-        }
-
-        setInterval(randomFlicker, 1000);
-
-        // Occasional static burst
-        function staticBurst() {
-            const noise = document.querySelector('.noise');
-            if (Math.random() < 0.05) {
-                noise.style.opacity = '0.3';
-                setTimeout(() => {
-                    noise.style.opacity = '0.03';
-                }, 100);
-            }
-        }
-
-        setInterval(staticBurst, 500);
-    </script>
+    <footer>
+        <p>This is an unofficial community resource for the Phasmophobia Crimson Eye Halloween Event.</p>
+        <p>Phasmophobia is developed by <strong>Kinetic Games</strong></p>
+        <p><a href="https://phasmo.info">← Back to phasmo.info</a> | <a href="https://www.kineticgames.co.uk/">Official Kinetic Games Website</a></p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Last Updated: October 16, 2025</p>
+    </footer>
 </body>
 </html>
